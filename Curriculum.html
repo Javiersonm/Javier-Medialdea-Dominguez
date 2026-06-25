@@ -1,105 +1,306 @@
-<!doctype html>
+```html
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Currículum — Javier Medialdea Domínguez</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
-    body { background-color: #f5f7fa; color: #333; }
-    .container { max-width: 900px; margin: 40px auto; background: #fff; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); overflow: hidden; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículum - Javier Medialdea Domínguez</title>
 
-    header { background-color: #1e40af; color: #fff; padding: 30px; display: flex; align-items: center; justify-content: center; gap: 20px; }
-    header img { width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 3px solid #fff; }
-    header div { text-align: left; }
-    header h1 { font-size: 28px; margin-bottom: 5px; }
-    header h2 { font-size: 18px; font-weight: 400; }
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-    .section { padding: 25px 40px; border-bottom: 1px solid #e0e0e0; }
-    .section:last-child { border-bottom: none; }
-    .section h3 { color: #1e3a8a; margin-bottom: 15px; border-left: 4px solid #1e3a8a; padding-left: 10px; font-size: 20px; }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-    .info p, .section ul li { font-size: 15px; line-height: 1.6; }
-    ul { list-style: none; padding-left: 15px; }
-    ul li::before { content: '•'; color: #1e3a8a; margin-right: 8px; }
+        body {
+            background: #eef2f7;
+            padding: 30px;
+            color: #333;
+        }
 
-    .contact p { margin-bottom: 6px; }
-    .highlight { color: #1e40af; font-weight: 500; }
+        .cv {
+            max-width: 1100px;
+            margin: auto;
+            background: #fff;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, .12);
+        }
 
-    footer { text-align: center; padding: 20px; font-size: 13px; color: #777; background-color: #f9fafb; }
-  </style>
+        /* COLUMNA IZQUIERDA */
+
+        .sidebar {
+            background: linear-gradient(180deg, #1e3a8a, #2563eb);
+            color: white;
+            padding: 35px;
+        }
+
+        .photo {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, .3);
+            display: block;
+            margin: auto;
+        }
+
+        .name {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .name h1 {
+            font-size: 28px;
+            line-height: 1.2;
+        }
+
+        .name p {
+            opacity: .9;
+            margin-top: 8px;
+        }
+
+        .sidebar-section {
+            margin-top: 35px;
+        }
+
+        .sidebar-section h2 {
+            font-size: 17px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(255, 255, 255, .2);
+        }
+
+        .sidebar-section ul {
+            list-style: none;
+        }
+
+        .sidebar-section li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        /* COLUMNA DERECHA */
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h2 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            font-size: 22px;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #2563eb;
+            margin-top: 6px;
+            border-radius: 10px;
+        }
+
+        .section p {
+            line-height: 1.8;
+        }
+
+        .item {
+            margin-bottom: 20px;
+        }
+
+        .item h3 {
+            color: #111827;
+            font-size: 17px;
+        }
+
+        .item span {
+            color: #2563eb;
+            font-weight: 500;
+        }
+
+        .item p {
+            margin-top: 6px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background: #dbeafe;
+            color: #1e3a8a;
+            padding: 8px 14px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        @media(max-width:850px) {
+            .cv {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="container">
-    <header>
-      <img src="IMG_1376.PNG" alt="Foto de Javier Medialdea Domínguez">
-      <div>
-        <h1>Javier Medialdea Domínguez</h1>
-        <h2>Técnico en Sistemas Microinformáticos y Redes</h2>
-      </div>
-    </header>
 
-    <section class="section">
-      <h3>Contacto</h3>
-      <div class="contact">
-        <p><span class="highlight">Correo:</span> javiermedialdeadominguez@gmail.com</p>
-        <p><span class="highlight">Teléfono:</span> 613257085</p>
-        <p><span class="highlight">Código Postal:</span> 18140</p>
-        <p><span class="highlight">Ciudad:</span> Granada</p>
-      </div>
-    </section>
+    <div class="cv">
 
-    <section class="section">
-      <h3>Sobre mí</h3>
-      <p>Soy una persona responsable, constante y con una gran capacidad para adaptarme a diferentes 
-        entornos de trabajo.</p> <br>
-        
-        <p>Me esfuerzo siempre por dar lo mejor de mí y mantener una actitud positiva frente a los retos y 
-            Destaco por mi facilidad para trabajar en equipo, mi trato respetuoso con las personas y mi 
-            disposición a ayudar a quien lo necesite.</p> <br>
+        <!-- COLUMNA IZQUIERDA -->
 
+        <aside class="sidebar">
 
-        Actualmente he finalizado el Grado Medio en Sistemas Microinformáticos y Redes, y estoy cursando en el Grado Superior de Desarrollo de Aplicaciones Web (DAW).</p>
-<br>
-    </section>
+            <img src="IMG_1376.PNG" alt="Foto de Javier" class="photo">
 
-    <section class="section">
-      <h3>Formación laboral</h3>
-      <ul>
-        <li><strong>Desarrollador de Aplicaciones Web</strong> - IES Zaidín Vergeles (Cursando 2025)</li>
-        <li><strong>Técnico en Sistemas Microinformáticos y Redes</strong> - IES Zaidín Vergeles (Finalizado en  2025)</li>
-        <li><strong>Título de Educación Secundaria Obligatoria</strong> - IES Trevenque (Finalizado en 2022)</li>
-      </ul>
-    </section>
+            <div class="name">
+                <h1>Javier Medialdea Domínguez</h1>
+                <p>Técnico en SMR · Estudiante de DAW</p>
+            </div>
 
-    <section class="section">
-      <h3>Experiencia laboral</h3>
-      <ul>
-        <li><strong>Dependiente de Frutería</strong> — Calle Pablo Iglesias 16</li>
-        <li><strong>Prácticas formativas no remuneradas en La Diputacion de Granada</strong><br>
-          Régimen: General — Grupo de cotización: Auxiliares Administrativos<br>
-          Período práctico: 09 abr 2025 — 13 jun 2025
-        </li>
-      </ul>
-    </section>
+            <div class="sidebar-section">
+                <h2>Contacto</h2>
+                <ul>
+                    <li>javiermedialdeadominguez@gmail.com</li>
+                    <li>613257085</li>
+                </ul>
+            </div>
 
-    <section class="section">
-      <h3>Información relevante</h3>
-      <ul>
-        <li>Un informático de alta calidad</li>
-        <li>Me esfuerzo bastante</li>
-        <li>Trato muy bien a la gente</li>
-        <li>No me cuesta hablar con los demás</li>
-        <li>Ayudo a toda la gente que lo necesita o veo que tiene problemas</li>
-      </ul>
-    </section>
+            <div class="sidebar-section">
+                <h2>Competencias</h2>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript básico</li>
+                    <li>Windows y Linux</li>
+                    <li>Redes informáticas</li>
+                    <li>Google Workspace</li>
+                    <li>Microsoft Office</li>
+                    <li>Montaje y mantenimiento de equipos</li>
+                </ul>
+            </div>
 
-    <footer>
-      Currículum de Javier Medialdea Domínguez — Actualizado 2025
-    </footer>
-  </div>
+            <div class="sidebar-section">
+                <h2>Cualidades</h2>
+                <ul>
+                    <li>Responsable y constante</li>
+                    <li>Trabajo en equipo</li>
+                    <li>Buena atención al público</li>
+                    <li>Capacidad de adaptación</li>
+                    <li>Aprendizaje rápido</li>
+                </ul>
+            </div>
+
+        </aside>
+
+        <!-- COLUMNA DERECHA -->
+
+        <main class="content">
+
+            <section class="section">
+                <h2>Sobre mí</h2>
+
+                <p>
+                    Técnico en Sistemas Microinformáticos y Redes y estudiante de Desarrollo de Aplicaciones Web. Me
+                    caracterizo por ser una persona responsable, comprometida y con capacidad de adaptación, así como
+                    por mi facilidad para el trabajo en equipo y el aprendizaje continuo. Actualmente, busco seguir
+                    ampliando mi experiencia profesional y desarrollando mis competencias en el ámbito tecnológico,
+                    aportando dedicación, iniciativa y una actitud positiva en el entorno laboral.
+
+                </p>
+
+            </section>
+
+            <section class="section">
+                <h2>Formación</h2>
+
+                <div class="item">
+                    <h3>Grado Superior en Desarrollo de Aplicaciones Web (DAW)</h3>
+                    <span>IES Zaidín-Vergeles · 2025 - Actualidad</span>
+                    <p>Primer curso finalizado.</p>
+                </div>
+
+                <div class="item">
+                    <h3>Técnico en Sistemas Microinformáticos y Redes</h3>
+                    <span>IES Zaidín-Vergeles · Finalizado en 2025</span>
+                </div>
+
+                <div class="item">
+                    <h3>Educación Secundaria Obligatoria (ESO)</h3>
+                    <span>IES Trevenque · Finalizada en 2022</span>
+                </div>
+
+            </section>
+
+            <section class="section">
+                <h2>Experiencia</h2>
+
+                <div class="item">
+                    <h3>Prácticas Formativas - SIMASA</h3>
+                    <span>05/05/2026 - 29/05/2026</span>
+                    <p>
+                        Prácticas formativas no remuneradas realizadas durante el
+                        primer curso de DAW, colaborando en tareas relacionadas con
+                        el entorno informático y administrativo de la empresa.
+                    </p>
+                </div>
+
+                <div class="item">
+                    <h3>Prácticas Formativas - Diputación de Granada</h3>
+                    <span>09/04/2025 - 13/06/2025</span>
+                    <p>
+                        Formación práctica en entorno profesional dentro del ámbito
+                        de Sistemas Microinformáticos y Redes.
+                    </p>
+                </div>
+
+                <div class="item">
+                    <h3>Dependiente de Frutería</h3>
+                    <p>
+                        Atención al cliente, organización de productos y apoyo en
+                        las tareas diarias del establecimiento.
+                    </p>
+                </div>
+
+            </section>
+
+            <section class="section">
+                <h2>Tecnologías</h2>
+
+                <div class="skills">
+                    <div class="skill">HTML</div>
+                    <div class="skill">CSS</div>
+                    <div class="skill">JavaScript</div>
+                    <div class="skill">Windows</div>
+                    <div class="skill">Linux</div>
+                    <div class="skill">Redes</div>
+                    <div class="skill">Office</div>
+                    <div class="skill">Google Workspace</div>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
 </body>
+
 </html>
